@@ -26,7 +26,7 @@ class QueueTest < Minitest::Test
     q.push('1')
     assert_equal "1", q.tail
     q.push('0')
-    assert_equal '0' q.tail
+    assert_equal '0', q.tail
     assert_equal ['0','1'], q.tail(2)
   end
 
