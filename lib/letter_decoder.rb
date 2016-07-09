@@ -1,6 +1,5 @@
 module ParaMorse
-  class LetterEncoder
-    attr_reader :letter_code_reference
+  class LetterDecoder
     def initialize
       @letter_code_reference = {"a" => "10111",
         "b" => "111010101",
@@ -41,8 +40,8 @@ module ParaMorse
         "9" => "11101110111011101",
         "0" => "1110111011101110111"}
     end
-    def encode(letter)
-      @letter_code_reference[letter.downcase]
+    def decode(input)
+      @letter_code_reference.key(input)
     end
   end
 end

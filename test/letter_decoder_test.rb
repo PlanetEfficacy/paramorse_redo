@@ -3,11 +3,11 @@ SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
 
-require_relative '../lib/letter_encoder.rb'
+require_relative '../lib/letter_decoder.rb'
 
-class LetterEncoderTest < Minitest::Test
-  def test_it_encodes_letters
-    letter_encoder = ParaMorse::LetterEncoder.new
+class LetterDecoderTest < Minitest::Test
+  def test_it_decodes_easy_letters
+    letter_decoder = ParaMorse::LetterDecoder.new
     letter_code_reference = {"a" => "10111",
       "b" => "111010101",
       "c" => "11101011101",
@@ -47,12 +47,7 @@ class LetterEncoderTest < Minitest::Test
       "9" => "11101110111011101",
       "0" => "1110111011101110111"}
 
-    assert_equal letter_code_reference["a"], letter_encoder.encode("a"), "A"
-    assert_equal letter_code_reference["q"], letter_encoder.encode("q"), "Q"
-    assert_equal letter_code_reference["1"], letter_encoder.encode("1"), "1"
-    assert_equal letter_code_reference["a"], letter_encoder.encode("A"), "A, Capital"
-    assert_equal letter_code_reference[" "], letter_encoder.encode(" "), "Space"
-    #letter_encoder.encode(""), "Empty"
+    assert_equal "a", letter_decoder.decode('10111')
+    assert_equal "q", letter_decoder.decode("1110111010111")
   end
-
 end
