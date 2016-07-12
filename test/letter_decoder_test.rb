@@ -1,8 +1,6 @@
 # require 'SimpleCov'
 # SimpleCov.start
-require 'minitest/autorun'
-require 'minitest/pride'
-
+require_relative 'test_helper'
 require_relative '../lib/letter_decoder.rb'
 
 class LetterDecoderTest < Minitest::Test
