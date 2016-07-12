@@ -1,14 +1,6 @@
-# require 'SimpleCov'
-# SimpleCov.start
-require 'minitest/autorun'
-require 'minitest/pride'
-
-require_relative '../lib/letter_decoder.rb'
-
-class LetterDecoderTest < Minitest::Test
-  def test_it_decodes_easy_letters
-    letter_decoder = ParaMorse::LetterDecoder.new
-    letter_code_reference = {"a" => "10111",
+module MorseCodeDictionary
+  def dictionary
+    {"a" => "10111",
       "b" => "111010101",
       "c" => "11101011101",
       "d" => "1110101",
@@ -35,7 +27,6 @@ class LetterDecoderTest < Minitest::Test
       "y" => "1110101110111",
       "z" => "11101110101",
       " " => "000000",
-
       "1" => "10111011101110111",
       "2" => "101011101110111",
       "3" => "1010101110111",
@@ -46,8 +37,5 @@ class LetterDecoderTest < Minitest::Test
       "8" => "111011101110101",
       "9" => "11101110111011101",
       "0" => "1110111011101110111"}
-
-    assert_equal "a", letter_decoder.decode('10111')
-    assert_equal "q", letter_decoder.decode("1110111010111")
   end
 end
