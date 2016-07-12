@@ -1,4 +1,4 @@
-require_relative "word_decoder"
+require "./lib/word_decoder"
 module ParaMorse
   class SentenceDecoder
     def initialize

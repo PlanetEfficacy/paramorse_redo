@@ -1,4 +1,4 @@
-require_relative "word_encoder.rb"
+require "./lib/word_encoder.rb"
 module ParaMorse
   class SentenceEncoder
     def initialize

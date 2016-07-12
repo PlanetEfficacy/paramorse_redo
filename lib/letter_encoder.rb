@@ -1,4 +1,4 @@
-require_relative 'dictionary'
+require './lib/dictionary'
 module ParaMorse
   class LetterEncoder
     include MorseCodeDictionary

@@ -1,7 +1,5 @@
-# require 'SimpleCov'
-# SimpleCov.start
-require_relative 'test_helper'
-require_relative '../lib/letter_decoder.rb'
+require './test/test_helper'
+require './lib/letter_decoder.rb'
 
 class LetterDecoderTest < Minitest::Test
   def test_it_decodes_easy_letters

@@ -1,7 +1,5 @@
-# require 'SimpleCov'
-# SimpleCov.start
-require_relative 'test_helper'
-require_relative '../lib/queue.rb'
+require './test/test_helper'
+require './lib/queue.rb'
 
 class QueueTest < Minitest::Test
   def test_it_pushes_items_into_queue

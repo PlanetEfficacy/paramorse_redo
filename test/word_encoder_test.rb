@@ -1,7 +1,5 @@
-# require 'SimpleCov'
-# SimpleCov.start
-require_relative 'test_helper'
-require_relative '../lib/word_encoder.rb'
+require './test/test_helper'
+require './lib/word_encoder.rb'
 
 class WordEncoderTest < Minitest::Test
   def test_it_encodes_words

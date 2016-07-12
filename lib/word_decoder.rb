@@ -1,5 +1,5 @@
-require_relative 'letter_decoder.rb'
-
+require './lib/letter_decoder.rb'
+require 'pry'
 module ParaMorse
   class WordDecoder
     def initialize
