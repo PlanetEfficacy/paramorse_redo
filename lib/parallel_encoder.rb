@@ -1,4 +1,6 @@
-require "./lib/stream_decoder.rb"
+require "./lib/stream_decoder"
+require "./lib/file_encoder"
+
 module ParaMorse
   class ParallelEncoder
     attr_reader :stream
@@ -7,7 +9,17 @@ module ParaMorse
       @stream = StreamDecoder.new
     end
 
-    def encode_from_file
+    def encode_from_file(input_file_name, stream_count, output_file_name)
+      stream_file(input_file_name)
+    end
+
+    def stream_file(input_file_name)
+      file_encoder = FileEncoder.new
+      input_text = file_encoder.read(input_file_name)
+      input_text.split('').each do |character|
+        @stream.receive(character) if character != "\n"
+      end
+      @stream.queue.queue
     end
 
 

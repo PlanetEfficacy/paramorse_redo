@@ -86,4 +86,5 @@ class StreamTest < Minitest::Test
     assert_equal expected, actual
     assert_equal expected2, actual2
   end
+
 end

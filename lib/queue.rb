@@ -6,8 +6,9 @@ module ParaMorse
     def initialize()
       @queue = []
     end
+
     def push(incoming_bit)
-        @queue.push(incoming_bit)
+      @queue.push(incoming_bit)
     end
 
     def peek(quantity = 1)
@@ -28,5 +29,7 @@ module ParaMorse
     def clear
       @queue = []
     end
+
   end
+  
 end

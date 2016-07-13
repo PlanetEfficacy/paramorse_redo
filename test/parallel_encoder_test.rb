@@ -18,6 +18,16 @@ class ParallelEncoderTest < Minitest::Test
     assert_instance_of ParaMorse::StreamDecoder, parallel_encoder.stream
   end
 
+  def test_stream_file
+    parallel_encoder = ParaMorse::ParallelEncoder.new
+    expected = ["h","e","l","l","o"," ","w","o","r","l","d"]
+
+    actual = parallel_encoder.stream_file("./morse_code_text/parallel_text1.txt")
+
+    assert_equal expected, actual
+  end
+
+
   def test_parallel_encoder_can_encode_from_file
     skip
     parallel_encoder = ParaMorse::ParallelEncoder.new
