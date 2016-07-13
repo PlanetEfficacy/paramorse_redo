@@ -65,4 +65,25 @@ class StreamTest < Minitest::Test
     assert_equal expected, actual
     assert_equal expected2, actual2
   end
+
+  def test_it_can_encode_word
+    s = ParaMorse::StreamDecoder.new
+    s2 = ParaMorse::StreamDecoder.new
+    broadcast = "hi"
+    broadcast2 = "word"
+    expected = "1010101000101"
+    expected2 = "1011101110001110111011100010111010001110101"
+
+    broadcast.each_char do |digit|
+      s.receive(digit)
+    end
+    actual = s.encode
+    broadcast2.each_char do |digit|
+      s2.receive(digit)
+    end
+    actual2 = s2.encode
+
+    assert_equal expected, actual
+    assert_equal expected2, actual2
+  end
 end

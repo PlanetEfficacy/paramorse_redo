@@ -11,5 +11,7 @@ module ParaMorse
       end
       morse_code.join('000')
     end
+
+    
   end
 end
