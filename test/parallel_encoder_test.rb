@@ -27,6 +27,16 @@ class ParallelEncoderTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_it_can_split_the_stream
+    parallel_encoder = ParaMorse::ParallelEncoder.new
+    parallel_encoder.stream_file("./morse_code_text/parallel_text1.txt")
+    #expected = { "output1.txt" => "hlowrd", "output2.txt" => "el ol" }
+    expected = { "output1.txt" => "10101010001011101010001110111011100010111011100010111010001110101", "output2.txt" => "100010111010100000000000011101110111000101110101" }
+
+    actual = parallel_encoder.split(2)
+
+    assert_equal expected, actual
+  end
 
   def test_parallel_encoder_can_encode_from_file
     skip

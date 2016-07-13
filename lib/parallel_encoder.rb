@@ -22,6 +22,12 @@ module ParaMorse
       @stream.queue.queue
     end
 
+    def split(stream_count)
+
+    end
+
+
+
 
 
   end
