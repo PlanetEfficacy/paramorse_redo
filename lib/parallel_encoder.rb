@@ -1,5 +1,18 @@
-require "./lib/word_encoder.rb"
+require "./lib/stream_decoder.rb"
 module ParaMorse
+  class ParallelEncoder
+    attr_reader :stream
+
+    def initialize
+      @stream = StreamDecoder.new
+    end
+
+    def encode_from_file
+    end
+
+
+
+  end
 end
 # parallel_encoder = ParaMorse::ParallelEncoder.new
 # parallel_encoder.encode_from_file('input.txt', 8, 'output*.txt')
