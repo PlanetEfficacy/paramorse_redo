@@ -33,6 +33,7 @@ class FileEncoderTest < Minitest::Test
     file_enc = ParaMorse::FileEncoder.new
     expected = 11
     actual = file_enc.write("hello world", "./morse_code_text/parallel_text1_test_write.txt")
+    assert_equal expected, actual
   end
 
   def test_file_encoder_can_encode
