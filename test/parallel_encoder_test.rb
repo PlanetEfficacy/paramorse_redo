@@ -83,7 +83,7 @@ class ParallelEncoderTest < Minitest::Test
   def test_it_knows_if_the_stream_already_exists
     parallel_encoder = ParaMorse::ParallelEncoder.new
     split_stream1 = ParaMorse::SplitStream.new("00", "output00.txt", "hlowrd", "10101010001011101010001110111011100010111011100010111010001110101")
-    split_stream2 = ParaMorse::SplitStream.new("01", "output01.txt", "el ol", "100010111010100000000000011101110111000101110101")
+    split_stream2 = ParaMorse::SplitStream.new("01", "output01.txt", "el ol", "1000101110101000000000000011101110111000101110101")
     results = []
     results2 = [split_stream1, split_stream2]
 
@@ -145,7 +145,7 @@ class ParallelEncoderTest < Minitest::Test
     parallel_encoder = ParaMorse::ParallelEncoder.new
     parallel_encoder.stream_file("./morse_code_text/parallel_text1.txt")
     split_stream1 = ParaMorse::SplitStream.new("00", "output00.txt", "hlowrd", "10101010001011101010001110111011100010111011100010111010001110101")
-    split_stream2 = ParaMorse::SplitStream.new("01", "output01.txt", "el ol", "100010111010100000000000011101110111000101110101")
+    split_stream2 = ParaMorse::SplitStream.new("01", "output01.txt", "el ol", "1000101110101000000000000011101110111000101110101")
     expected1 = split_stream1.stream_number
     expected2 = split_stream1.file_name
     expected3 = split_stream1.input_text
@@ -178,7 +178,7 @@ class ParallelEncoderTest < Minitest::Test
   def test_parallel_encoder_can_encode_from_file
     parallel_encoder = ParaMorse::ParallelEncoder.new
     split_stream1 = ParaMorse::SplitStream.new("00", "./morse_code_text/parallel_encode_from_file_output00.txt", "hlowrd", "10101010001011101010001110111011100010111011100010111010001110101")
-    split_stream2 = ParaMorse::SplitStream.new("01", "./morse_code_text/parallel_encode_from_file_output01.txt", "el ol", "100010111010100000000000011101110111000101110101")
+    split_stream2 = ParaMorse::SplitStream.new("01", "./morse_code_text/parallel_encode_from_file_output01.txt", "el ol", "1000101110101000000000000011101110111000101110101")
     expected = [split_stream1, split_stream2]
     expected1 = split_stream1.stream_number
     expected2 = split_stream1.file_name
@@ -246,5 +246,5 @@ class ParallelEncoderTest < Minitest::Test
     assert_equal expected1.length, actual1.length
     assert_equal expected1, actual1
   end
-  
+
 end
